@@ -51,10 +51,9 @@ export class S3DriveAdapter extends DriveAdapter {
                     reject(new Error(`No data.Body received from S3 for file ${key}`));
                 }
                 else {
-                    data.Body.transformToString()
-                        .then(value => {
-                            resolve(Buffer.from(value));
-                        })
+                    (data.Body as any).toArray().then((arr: any) => {
+                        resolve(Buffer.concat(arr));
+                    })
                         .catch(reject);
                 }
             });

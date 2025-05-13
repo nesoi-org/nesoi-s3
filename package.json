@@ -1,6 +1,6 @@
 {
   "name": "@nesoi/s3",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "AWS S3 plugin for the nesoi framework",
   "main": "index.js",
   "scripts": {
